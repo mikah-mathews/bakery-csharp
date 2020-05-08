@@ -20,7 +20,7 @@ namespace BakeryOptions
       Console.WriteLine("Bread - Buy 2 get 1 free");
       Console.WriteLine("Pastries - Buy 3 for 5 usd");
       Console.WriteLine("----------");
-      Console.WriteLine("Do you want to add bread to your cart, add pastries to your cart, or checkout?");
+      Console.WriteLine("Do you want to add bread to your cart, add pastries to your cart, checkout or quit?");
       Console.WriteLine("bread || pastry || checkout || quit");
       string action = Console.ReadLine();
       while (action != "quit" || action != "Quit")

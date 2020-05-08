@@ -30,7 +30,7 @@ namespace BakeryOptions
       else if (BakeStats["bread"] == 2)
       {
         BakeStats["bread"] ++;
-        return "You have 2 loaves of bread in your cart. Your third loaf is free!";
+        return "You have 2 loaves of bread in your cart. Your third loaf is free! It has been added to the cart!";
       }
       else if (BakeStats["bread"] > 1)
       {
