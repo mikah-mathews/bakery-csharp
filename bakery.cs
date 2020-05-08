@@ -9,7 +9,6 @@ namespace BakeryOptions
     public string Bread { get; set; }
     public string Pastry { get; set; }
     public string Price { get; set; }
-
     public static Dictionary<string, int> BakeStats;
     public BakeryCart(string numberOfBread, string numberOfPastry, string total)
     {
@@ -27,6 +26,11 @@ namespace BakeryOptions
       if (BakeStats["bread"] <= 1)
       {
         return "You have " + BakeStats["bread"] + " loaf of bread in your cart.";
+      }
+      else if (BakeStats["bread"] == 2)
+      {
+        BakeStats["bread"] ++;
+        return "You have 2 loaves of bread in your cart. Your third loaf is free!";
       }
       else if (BakeStats["bread"] > 1)
       {
