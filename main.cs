@@ -50,7 +50,7 @@ namespace BakeryOptions
 
         System.Threading.Thread.Sleep(1000);
         Console.WriteLine("----------");
-        Console.WriteLine("Do you want to add bread to your cart, add pastries to your cart, or checkout?");
+        Console.WriteLine("Do you want to add bread to your cart, add pastries to your cart, checkout, or quit?");
         Console.WriteLine("bread || pastry || checkout || quit");
         action = Console.ReadLine();
       }

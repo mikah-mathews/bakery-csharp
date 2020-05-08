@@ -24,21 +24,49 @@ namespace BakeryOptions
     public static string addBread()
     {
       BakeStats["bread"] ++;
-      return "You have " + BakeStats["bread"] + " bread in your cart.";
+      if (BakeStats["bread"] <= 1)
+      {
+        return "You have " + BakeStats["bread"] + " loaf of bread in your cart.";
+      }
+      else if (BakeStats["bread"] > 1)
+      {
+        return "You have " + BakeStats["bread"] + " loaves of bread in your cart.";
+      }
+      else
+      {
+        return "There is an error??? in addBread";
+      }
+      
     }
+
     public static string addPastry()
     {
       BakeStats["pastry"] ++;
-      return "You have " + BakeStats["pastry"] + " pastry in your cart.";
+      if (BakeStats["pastry"] <= 1)
+      {
+        return "You have " + BakeStats["pastry"] + " pastry in your cart.";
+      } 
+      else if (BakeStats["pastry"] > 1)
+      {
+        return "You have " + BakeStats["pastry"] + " pastries in your cart.";
+      }
+      else
+      {
+        return "There is an error??? in pastry";
+      }
+      
     }
     public static string total()
     {
       int breadPrice = BakeStats["bread"] * 5;
       int discountedBread = (int)Math.Floor((decimal)BakeStats["bread"] / 2);
       int discountBreadPrice = discountedBread * 5;
-      int pastryPrice = BakeStats["pastry"] * 2;
-      int totalPrice = (breadPrice - discountBreadPrice) + pastryPrice;
-      return "Your bread price is: " + breadPrice + " usd\nYour pastry price is: " + pastryPrice + "usd\nYour total is " + totalPrice + " usd";
+      int finalBreadPrice = (breadPrice - discountBreadPrice);
+      int pastriesForFive = BakeStats["pastry"] / 3;
+      int pastriesForTwo = BakeStats["pastry"] % 3;
+      int finalPastryPrice = ((pastriesForFive * 5) + (pastriesForTwo * 2));
+      int totalPrice = finalBreadPrice + finalPastryPrice;
+      return "Your bread price is: " + finalBreadPrice + " usd\nYour pastry price is: " + finalPastryPrice + "usd\nYour total is " + totalPrice + " usd";
 
     }
   }
