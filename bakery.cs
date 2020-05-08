@@ -34,22 +34,12 @@ namespace BakeryOptions
     public static string total()
     {
       int breadPrice = BakeStats["bread"] * 5;
+      int discountedBread = (int)Math.Floor((decimal)BakeStats["bread"] / 2);
+      int discountBreadPrice = discountedBread * 5;
       int pastryPrice = BakeStats["pastry"] * 2;
-      int totalPrice = breadPrice + pastryPrice;
+      int totalPrice = (breadPrice - discountBreadPrice) + pastryPrice;
       return "Your bread price is: " + breadPrice + " usd\nYour pastry price is: " + pastryPrice + "usd\nYour total is " + totalPrice + " usd";
 
     }
-  }
-  public class Bread
-  {
-    public int BreadAmount { get; set;}
-
-    public HowMuch(int breadAmount)
-    {
-      BreadAmount = breadAmount;
-    }
-    
-
-
   }
 }
