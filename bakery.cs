@@ -23,7 +23,11 @@ namespace BakeryOptions
 
     public static string addBread
     {
-      
+      BakeStats["Bread"] ++;
+    }
+    public static string addPastry
+    {
+      BakeStats["Pastry"] ++;
     }
   }
 }
