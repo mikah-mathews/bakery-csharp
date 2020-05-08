@@ -9,7 +9,7 @@ namespace BakeryOptions
     {
       List<BakeryCart> Cart = new List<BakeryCart>();
       Cart.Add(new BakeryCart("0", "0", "0"));
-      Console.WriteLine("Hello. Welcome to Red's Bakery.");
+      Console.WriteLine("\nHello. Welcome to Red's Bakery.");
       Console.WriteLine("----------");
       Console.WriteLine("|| Menu ||");
       Console.WriteLine("~~~~~~~~~~");
@@ -25,6 +25,7 @@ namespace BakeryOptions
       string action = Console.ReadLine();
       while (action != "quit" || action != "Quit")
       {
+        Console.WriteLine("----------");
         if (action == "checkout")
         {
           Console.WriteLine(BakeryCart.total());
@@ -37,10 +38,21 @@ namespace BakeryOptions
         {
           Console.WriteLine(BakeryCart.addPastry());
         }
+        else if (action == "quit" || action == "Quit")
+        {
+          Console.WriteLine("See you! Please come again.");
+          break;
+        }
         else
         {
           Console.WriteLine("Command not recognized, please try again");
         }
+
+        System.Threading.Thread.Sleep(1000);
+        Console.WriteLine("----------");
+        Console.WriteLine("Do you want to add bread to your cart, add pastries to your cart, or checkout?");
+        Console.WriteLine("bread || pastry || checkout || quit");
+        action = Console.ReadLine();
       }
     }
   }

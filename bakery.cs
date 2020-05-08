@@ -8,7 +8,7 @@ namespace BakeryOptions
   {
     public string Bread { get; set; }
     public string Pastry { get; set; }
-    public string error CS1014: A get or set accessor expected Price { get; set; }
+    public string Price { get; set; }
 
     public static Dictionary<string, int> BakeStats;
     public BakeryCart(string numberOfBread, string numberOfPastry, string total)
@@ -24,18 +24,32 @@ namespace BakeryOptions
     public static string addBread()
     {
       BakeStats["bread"] ++;
-      return "You have " + BakeStats["bread"] + " in your cart.";
+      return "You have " + BakeStats["bread"] + " bread in your cart.";
     }
     public static string addPastry()
     {
       BakeStats["pastry"] ++;
-      return "You have " + BakeStats["pastry"] + " in your cart.";
+      return "You have " + BakeStats["pastry"] + " pastry in your cart.";
     }
     public static string total()
     {
       int breadPrice = BakeStats["bread"] * 5;
       int pastryPrice = BakeStats["pastry"] * 2;
-      return "Your bread price is: " + breadPrice + "\nYour pastry price is: " + pastryPrice;
+      int totalPrice = breadPrice + pastryPrice;
+      return "Your bread price is: " + breadPrice + " usd\nYour pastry price is: " + pastryPrice + "usd\nYour total is " + totalPrice + " usd";
+
     }
+  }
+  public class Bread
+  {
+    public int BreadAmount { get; set;}
+
+    public HowMuch(int breadAmount)
+    {
+      BreadAmount = breadAmount;
+    }
+    
+
+
   }
 }
