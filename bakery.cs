@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BakeryOptions
 {
@@ -17,24 +18,24 @@ namespace BakeryOptions
       Pastry = numberOfPastry;
       Price = total;
       BakeStats = new Dictionary<string, int>();
-      BakeStats.Add("Bread", 0);
-      BakeStats.Add("Pastry", 0);
+      BakeStats.Add("bread", 0);
+      BakeStats.Add("pastry", 0);
     }
 
     public static string addBread
     {
-      BakeStats["Bread"] ++;
-      Console.WriteLine("You have " + BakeStats["Bread"] + " in your cart.");
+      BakeStats["bread"] ++;
+      return "You have " + BakeStats["bread"] + " in your cart.";
     }
     public static string addPastry
     {
-      BakeStats["Pastry"] ++;
-      Console.WriteLine("You have " + BakeStats["Pastry"] + " in your cart.");
+      BakeStats["pastry"] ++;
+      return "You have " + BakeStats["pastry"] + " in your cart.";
     }
     public static string total
     {
-      int breadPrice = BakeStats["Bread"] * 5;
-      int pastryPrice = BakeStats["Pastry"] * 2;
+      int breadPrice = BakeStats["bread"] * 5;
+      int pastryPrice = BakeStats["pastry"] * 2;
       return "Your bread price is: " + breadPrice + "\nYour pastry price is: " + pastryPrice;
     }
   }

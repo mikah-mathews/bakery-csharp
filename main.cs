@@ -26,19 +26,19 @@ namespace BakeryOptions
       {
         if (action == "checkout")
         {
-
+          Console.WriteLine(BakeryCart.total());
         }
         else if (action == "bread")
         {
-
+          Console.WriteLine(BakeryCart.addBread());
         }
         else if (action == "pastry")
         {
-
+          Console.WriteLine(BakeryCart.addPastry());
         }
         else
         {
-          Console.WriteLine
+          Console.WriteLine("Command not recognized, please try again");
         }
       }
     }
