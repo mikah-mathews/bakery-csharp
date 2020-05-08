@@ -6,13 +6,12 @@ namespace BakeryOptions
 {
   public class BakeryCart
   {
-    public string Bread { get; set;}
-    public string Pastry { get; set;}
-    public int Price {get; set;}
+    public string Bread { get; set; }
+    public string Pastry { get; set; }
+    public int Price { get; set; }
 
     public static Dictionary<string, int> BakeStats;
-
-    public BakeryCart(string numberOfBread, string numberOfPastry, int total)
+    public BakeryCart(string numberOfBread, string numberOfPastry, string total)
     {
       Bread = numberOfBread;
       Pastry = numberOfPastry;

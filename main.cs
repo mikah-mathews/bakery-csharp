@@ -8,6 +8,7 @@ namespace BakeryOptions
     public static void Main()
     {
       List<BakeryCart> Cart = new List<BakeryCart>();
+      Cart.Add(new BakeryCart("0", "0", "0"));
       Console.WriteLine("Hello. Welcome to Red's Bakery.");
       Console.WriteLine("----------");
       Console.WriteLine("|| Menu ||");
